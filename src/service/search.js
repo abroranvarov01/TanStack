@@ -3,13 +3,15 @@ import { request } from "../config/request";
 
 const useSearch = (input = "") => {
   return useQuery({
-    queryKey: ["search"],
+    queryKey: ["search", input],
     queryFn: () =>
-      request.get("/phones", {
-        params: {
-          title_like: input ? input : "00000",
-        },
-      }),
+      request
+        .get("/phones", {
+          params: {
+            title_like: input ? input : "00000",
+          },
+        })
+        .then((res) => res.data),
   });
 };
 

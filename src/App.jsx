@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="/scrol" element={<InfScrol />} />
+          <Route path="computer" element={<InfScrol />} />
         </Route>
       </Routes>
     </>
